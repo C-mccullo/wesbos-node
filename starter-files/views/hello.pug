@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	div.wrapper.fool
+		- const knightDog = "sir " + futureDog
+		p.hello Hello! My name is #{name}
+		p.dawg
+			|my future dog is going to be named #{futureDog}
+		span#yo take a look at out my pooch! 👉 
+		img.sweet-pooch(src="dog.jpg" alt=`my sweet pooch ${knightDog}`)
+
+	h3 
+		| hey! 
+		strong how'goin?
