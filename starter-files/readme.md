@@ -1,8 +1,4 @@
-## What is this?
-
-Just you wait folks!
-
-## Sample Data
+## Sample Data!
 
 To load sample data, run the following command in your terminal:
 
@@ -10,7 +6,7 @@ To load sample data, run the following command in your terminal:
 npm run sample
 ```
 
-If you have previously loaded in this data, you can wipe your database 100% clean with:
+Psst! If you have previously loaded in this data, you can wipe your database 100% clean with:
 
 ```bash
 npm run blowitallaway
