@@ -1,3 +1,4 @@
+// start.js is where all of our code is imported to in order to kick off the our server 
 const mongoose = require('mongoose');
 
 // Make sure we are running node 7.6+

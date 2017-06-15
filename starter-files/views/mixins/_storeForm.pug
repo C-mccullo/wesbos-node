@@ -1,10 +1,10 @@
 //- VIEW MIXINS
 mixin storeForm(store = {})
-	form(action="/add" method="POST" enctype="multipart/form-data" class="card")
+	form(action="/add" method="POST" class="card")
 		label(for="name") Store Name
 		input(type="text" name="name")
 		label(for="description") Store Description
-		textarea(name="description")
+		textarea(name="description" placeholder="tell us about this store")
 		- const choices = ["WiFi", "Open late", "Vegetarian Options", "Family Friendly", "Licensed"]
 		ul.tags 
 			each choice in choices
