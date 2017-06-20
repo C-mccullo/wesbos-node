@@ -7,7 +7,7 @@ const { catchErrors } = require("../handlers/errorHandlers");
 
 router.get("/add", storeController.addStore);
 
-router.post("/add", catchErrors(storeController.createStore));
+router.post("/add", catchErrors(storeController.createStore)); // USING ASYNC AWAIT, wrapped in catchErrors function
 
 router.get("/doge/", storeController.dogePage);
 

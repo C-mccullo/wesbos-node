@@ -15,9 +15,20 @@ exports.addStore = (req,res) => {
 		title: "Add Store"
 	});
 } 
+
+// EXAMPLE CALLBACK, instead of await
+// exports.createStore = (req, res) => {
+// 	const store = new Store(req.body);
+// 	store.save(function(err, store) {
+// 		if(!err) {
+// 			console.log("store has been saved");
+// 			res.redirect("/")
+// 		}
+// 	});
+// }
+
 // NOTE! If you do not wrap your async await function in a try-catch statement
-// you will need to pass the function into a chain of error handlers! 
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function 
+// you will need to pass the function into a chain of error handlers! (errorHandlers.js) 
 exports.createStore = async (req, res) => {
 	const store = await (new Store(req.body)).save();
 	console.log("store has been saved");
