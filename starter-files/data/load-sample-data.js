@@ -37,6 +37,7 @@ async function loadData() {
     process.exit();
   }
 }
+// this is the condition that runs the different functions
 if (process.argv.includes('--delete')) {
   deleteData();
 } else {

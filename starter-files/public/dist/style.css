@@ -473,6 +473,9 @@ p {
   line-height: 2;
   font-size: 1.6rem; }
 
+p.small {
+  font-size: 1.4rem; }
+
 .title {
   word-wrap: break-word;
   position: relative;

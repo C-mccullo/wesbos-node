@@ -5,7 +5,7 @@
   Instead of using try{} catch(e) {} in each controller, we wrap the function in
   catchErrors(), catch any errors they throw, and pass it along to our express middleware with next()
 */
-
+// 👇 NICE! USED TO CATCH ASYNC AWAIT ERRORS 👇
 exports.catchErrors = (fn) => {
   return function(req, res, next) {
     return fn(req, res, next).catch(next);
@@ -30,6 +30,7 @@ exports.notFound = (req, res, next) => {
 */
 
 exports.flashValidationErrors = (err, req, res, next) => {
+  // if there are no errors to show in flash message, skip this handler
   if (!err.errors) return next(err);
   // validation errors look like
   const errorKeys = Object.keys(err.errors);
@@ -39,7 +40,7 @@ exports.flashValidationErrors = (err, req, res, next) => {
 
 
 /*
-  Development Error Hanlder
+  Development Error Handler
 
   In development we show good error messages so if we hit a syntax error or any other previously un-handled error, we can show good info on what happened
 */

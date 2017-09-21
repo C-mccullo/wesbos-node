@@ -1,0 +1,40 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+mongoose.Promise = global.Promise;
+
+const reviewSchema = new Schema({
+	created: {
+		type: Date,
+		default: Date.now
+	},
+	author: {
+		type: mongoose.Schema.ObjectId,
+		ref: "User",
+		required: "You must supply an author!"
+	},
+	store: {
+		type: mongoose.Schema.ObjectId,
+		ref: "Store",
+		required: "You must supply a store to review!",
+	},
+	text: {
+		type: String,
+		required: "Your review must have text!"
+	},
+	rating: {
+		type: Number,
+		min: 1,
+		max: 5
+	}
+});
+
+// *** added hook to ensure that when someone searches from Review using find or findOne that the author fields will be updated with the values from User Model ***
+function autoPopulate(next) {
+	this.populate("author");
+	next();
+}
+reviewSchema.pre("find", autoPopulate);
+reviewSchema.pre("findOne", autoPopulate);
+
+module.exports = mongoose.model("Review", reviewSchema)

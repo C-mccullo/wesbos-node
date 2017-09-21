@@ -13,10 +13,11 @@ const routes = require('./routes/index');
 const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
 
+require("./handlers/passport");
 // create our Express app
 const app = express();
 
-// view engine setup
+// view engine setup: https://expressjs.com/en/guide/using-template-engines.html
 app.set('views', path.join(__dirname, 'views')); // this is the folder where we keep our pug files
 app.set('view engine', 'pug'); // we use the engine pug, mustache or EJS work great too
 
