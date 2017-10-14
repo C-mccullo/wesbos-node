@@ -28,7 +28,6 @@ exports.notFound = (req, res, next) => {
 
   Detect if there are mongodb validation errors that we can nicely show via flash messages
 */
-
 exports.flashValidationErrors = (err, req, res, next) => {
   // if there are no errors to show in flash message, skip this handler
   if (!err.errors) return next(err);
